@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+</head>
+<body>
+    <h1>Here we learn about comment box</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto molestias esse nostrum facilis quas consequuntur illum voluptas placeat ex omnis magni iste asperiores, provident veniam odio ratione! Assumenda culpa voluptas blanditiis iusto, doloremque ducimus sint corrupti saepe deleniti voluptates. Voluptates veniam voluptatibus id ab nesciunt, totam iste quidem minima sit.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis nam et quasi neque? Voluptates pariatur dicta fugiat quia repudiandae voluptas placeat debitis, maiores odit cum in minima quaerat? Suscipit enim velit, illum odit ratione sapiente aliquid asperiores! Accusamus, esse amet aliquam adipisci enim recusandae necessitatibus, soluta ab voluptatem magnam alias.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate corporis illum magni sit sint. Eum vel eaque officiis voluptatem odio sint architecto consequuntur, cumque repellendus a, et ea eius ipsa delectus incidunt. Perspiciatis dolore eligendi dolorem, earum numquam ex temporibus dignissimos non dolorum molestiae quisquam quasi blanditiis eaque ut cupiditate?</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="80" rows="5"></textarea><br>
+        <button id="btn-post">Post</button>
+    </div>
+    <script>
+        // add even listener to post button
+        document.getElementById('btn-post').addEventListener('click', function() {
+            // console.log('Button clicked');
+            // 2. get the comment tag
+            const getCommentTag = document.getElementById('new-comment')
+            // console.log(getCommentTag)
+            // 3. get the comment value
+            const getNewComment = getCommentTag.value;
+            // console.log(getNewComment)
+            // 4. get the comment container
+            const commentContainer = document.getElementById('comment-container');
+            // 5. create child tag
+            const p = document.createElement('p');
+            // console.log(p);
+            // 6. set the value of new child 
+            p.innerText = getNewComment;
+            // console.log(p);
+            // 7. append the child
+            commentContainer.appendChild(p);
+            // clear the texarea
+            getCommentTag.value = '';
+
+
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- document.getElementById('btn-post').addEventListener('click', function() {
+            console.log('Post button clicked')
+            // get the comment
+            const getComment = document.getElementById('new-comment');
+            const newComment = getComment.value;
+            console.log(newComment)
+
+            // get the container where I will set the comment
+            const commentContainer = document.getElementById('comment-container');
+            console.log(commentContainer)
+            // create the new tag
+            const p = document.createElement('p');
+            console.log(p)
+            // set new text
+            p.innerText = newComment;
+            // console.log(p)
+            // append the new child to the comment container
+            commentContainer.appendChild(p);
+            
+        }) -->
